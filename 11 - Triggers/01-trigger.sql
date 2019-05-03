@@ -2,23 +2,20 @@
 --drop table log_salario;
 --drop trigger trg_salario_aud
 
-CREATE TABLE EMPREGADOS
-  (
+CREATE TABLE EMPREGADOS (
     CODIGO INT NOT NULL PRIMARY KEY,
     NOME VARCHAR2(20),
     SALARIO DECIMAL(10,2)
-    );
+);
     
-CREATE TABLE log_salario 
-    (
+CREATE TABLE log_salario (
     codigo INT,
     salario_anterior DECIMAL(10,2),
     salario_atual  DECIMAL(10,2),
     data_alteracao DATE,
     usuario VARCHAR2(20),
     operacao varchar2(10)
-    );
-    
+);
 
 --exemplo each row
 CREATE OR REPLACE TRIGGER trg_salario_aud
